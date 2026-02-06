@@ -9,12 +9,29 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <header>
+      <h1>TV Show Episodes</h1>
+    </header>
 
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <script src="episodes.js"></script>
+    <div class="controls">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search episodes..."
+        style="display: none"
+      />
+      <select id="season-filter" style="display: none">
+        <option value="all">All Seasons</option>
+      </select>
+    </div>
 
-    <!-- Loads YOUR javascript code -->
-    <script src="script.js"></script>
+    <!-- Container for episode cards -->
+    <div id="episodes-container"></div>
+
+     <footer>
+    Data from <a href="https://www.tvmaze.com" target="_blank" rel="noopener noreferrer">TVMaze.com</a>
+  </footer>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>
