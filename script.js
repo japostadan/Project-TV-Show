@@ -43,7 +43,17 @@ function renderEpisodes(episodeList) {
     `;
 
     // Attach click for modal
-    card.addEventListener("click", () => showModal(ep));
+    card.addEventListener("click", () => {
+      const modalBody = modal.querySelector("#modal-body");
+      modalBody.innerHTML = `
+        <h2>${ep.name} (${episodeCode})</h2>
+        <img src="${ep.image.medium}" alt="${ep.name}">
+        <p>${ep.summary}</p>
+        <p><strong>Air Date:</strong> ${ep.airdate}</p>
+        <p><strong>Runtime:</strong> ${ep.runtime} minutes</p>
+      `;
+      modal.style.display = "grid";
+    }); 
 
     container.appendChild(card);
   });
